@@ -1,0 +1,22 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h6 class="modal-title">Modal title</h6>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+   <ngx-extended-pdf-viewer [src]="this.blobUrl" [enablePrint]="false" [showOpenFileButton]="false"  useBrowserLocale="true" height="95vh"></ngx-extended-pdf-viewer>
+   
+
+  </div>
+    
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<!-- <button class="btn btn-outline-primary mb-2 mr-2" (click)="openXl(content)">Extra large modal</button> -->
+<button  class="btn btn-secondary align-self-center" (click)="callAll(content)">Export to Pdf</button>
+ 
